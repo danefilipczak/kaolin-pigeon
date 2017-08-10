@@ -1,0 +1,81 @@
+/**/
+html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color:black;
+}
+
+#map {
+	position:fixed;
+	background-color:yellow;
+	height:100%;
+	width:100%;
+	top:0px;
+	left:0px;
+	/*z-index:-2;*/
+}
+
+.main {
+	position:fixed;
+
+	width:100%;
+	/*top:61.8%;*/
+	/*height:28.2%;*/
+	/*z-index:1;*/
+	
+	font-family:monospace;
+	
+}
+
+.article{
+	/*z-index:3;*/
+/*	background-color:red;
+*/	width:30%;
+}
+
+#species{
+
+	/*background-color: white;
+*/
+
+	z-index:3;
+}
+
+.content {
+
+
+	background-color:rgba(0, 0, 0, 0.618);
+	color:white;
+	font-size:20px;
+	height:100%;
+	z-index:1;
+	overflow:scroll;
+	display:flex;
+	display: -webkit-flex; /* Safari */
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+    flex-wrap:wrap;
+
+    -webkit-justify-content: space-around; /* Safari 6.1+ */
+    justify-content: space-around;
+
+}
+
+#pic {
+	position:fixed;
+	top:0px;
+	height:100%;
+	width:0;
+	right:0px;
+	z-index:2;
+	opacity:0.88;
+	display:block;
+	text-align:right;
+}
+
+#pic img {
+
+	height:100%;
+	width:auto;
+	
+}

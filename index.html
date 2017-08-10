@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel = "stylesheet" href = "css/main.css">
+<title>kaolin pigeon</title>
+
+
+</head>
+
+<body>
+<!-- 
+<p>First name: <strong data-bind = "text: firstName">todo</strong></p>
+<p>Last name: <strong data-bind = "text: lastName">todo</strong></p>
+
+<p>First name: <input data-bind="value: firstName" /></p>
+<p>Last name: <input data-bind="value: lastName" /></p>
+
+<p>Full name: <strong data-bind="text: fullName"></strong></p> -->
+<div class = "main">
+	<section class = "content">
+		<article class = "article">
+			<div data-bind = "foreach: species">
+			<h1 data-bind = "text: name"></h1>
+			<p data-bind = "text: category"></p>
+			</div>
+
+
+			<div data-bind = "foreach: wikiList">
+			<a href = "" data-bind = "attr: {href: url}"><h1 data-bind = "text: name"></h1></a>
+			</div>
+		</article>
+		<article class = "article">
+			<div data-bind = "foreach: species">
+			<h1 data-bind = "text: name"></h1>
+			<p data-bind = "text: category"></p>
+			</div>
+
+
+			<div data-bind = "foreach: wikiList">
+			<a href = "" data-bind = "attr: {href: url}"><h1 data-bind = "text: name"></h1></a>
+			</div>
+		</article>
+		<article class = "article" id = "species">
+			<div data-bind = "foreach: species">
+			<h1 data-bind = "text: name"></h1>
+			<p data-bind = "text: category"></p>
+			</div>
+
+
+			<div data-bind = "foreach: wikiList">
+			<a href = "" data-bind = "attr: {href: url}"><h1 data-bind = "text: name"></h1></a>
+			</div>
+		</article>
+
+	</section>
+	<div id = "pic" tabindex = "-1">
+	<img id = "bird" src = "https://upload.wikimedia.org/wikipedia/commons/0/0b/Charadrius-melodus-004_edit.jpg">
+	</div>
+</div>
+
+
+<div id = "map"></div>
+
+
+
+
+
+
+
+<script src = "js/libs/ko.js"></script>
+<script src = "js/libs/jquery.js"></script>
+<script src = "js/species.js"></script>
+<script src = "js/map.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9_E2_FWgeaa-_JdeRo1CUvNfl5xgevj0&v=3&callback=initMap"></script>
+
+
+<script type='text/javascript' src = "js/app.js"></script>
+</body>
+
+</html>
