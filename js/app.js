@@ -47,6 +47,25 @@ function getSpeciesByCountry(country) {
 
 }
 
+function getCountriesBySpecies(species){
+	var url = "http://apiv3.iucnredlist.org/api/v3/species/countries/name/" + species + "?token=0a12c7a6e9b5ec8e06ced309eabbcba8fdb24b32b16a85e76f820e9c2b6d5b72"
+	$.ajax({
+		url: url,
+		// dataType: "jsonP",
+		success: function(response) {
+			// var filtered = response.result.filter(function(a) {
+			// 	return a.category === 'EN';
+			// });
+			var raw = response.result;
+			countries = [];
+			raw.forEach(function(r){
+				countries.push(r.country);
+			})
+			console.log(countries);
+		}
+	});
+}
+
 
 
 function getHabitatsBySpecies(species) {

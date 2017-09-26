@@ -11,6 +11,10 @@ var map;
 // }
 
 function highlightCountries(countryArray){
+	/*
+	Takes a string or an array of strings and highlight them on the map.
+	Note that this only works because both arrays and strings accept the 'includes' method, which is pretty cool
+	*/
 	map.data.setStyle(function(feature) {
 		var name = feature.getProperty('name');
 		//console.log()
