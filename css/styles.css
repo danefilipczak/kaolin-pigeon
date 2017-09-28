@@ -1,0 +1,45 @@
+#map {
+	position:fixed;
+	/*background-color:yellow;*/
+	height:100%;
+	width:100%;
+	top:0px;
+	left:0px;
+	/*z-index:-2;*/
+}
+
+
+.main {
+	position:fixed;
+	/*background-color:white;
+	opacity:0.618;*/
+	background-color: rgba(255, 255, 255, 0.68);
+	width:100%;
+	/*top:61.8%;*/
+	/*height:28.2%;*/
+	/*z-index:1;*/
+	
+	font-family:Arial;
+
+  	display: flex; /* or inline-flex */
+  	justify-content: space-around;
+  	flex-wrap: wrap;
+  	/*align-items: center;*/
+
+	
+}
+
+
+html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color:black;
+
+}
+
+.image {
+	max-width:200px;
+	max-height:200px;
+	opacity:1;
+}

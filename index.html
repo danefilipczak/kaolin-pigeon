@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel = "stylesheet" href = "css/main.css">
+<link rel = "stylesheet" href = "css/styles.css">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 <title>kaolin pigeon</title>
 
@@ -9,55 +9,32 @@
 </head>
 
 <body>
-<!-- 
-<p>First name: <strong data-bind = "text: firstName">todo</strong></p>
-<p>Last name: <strong data-bind = "text: lastName">todo</strong></p>
 
-<p>First name: <input data-bind="value: firstName" /></p>
-<p>Last name: <input data-bind="value: lastName" /></p>
-
-<p>Full name: <strong data-bind="text: fullName"></strong></p> -->
 <div class = "main">
-	<h1>i dinno</h1>
-	<section class = "content">
-		<article class = "article">
-			<div data-bind = "foreach: species">
-			<h1 data-bind = "text: name"></h1>
-			<p data-bind = "text: category"></p>
-			</div>
+	<h1>
+		{{vernacular}}
+	</h1>
+	<h2>
+		{{scientific}}
+	</h2>
+	<span>
+		{{excerpt}}
+	</span>
 
 
-			<div data-bind = "foreach: wikiList">
-			<a href = "" data-bind = "attr: {href: url}"><h1 data-bind = "text: name"></h1></a>
-			</div>
-		</article>
-		<article class = "article">
-			<div data-bind = "foreach: species">
-			<h1 data-bind = "text: name"></h1>
-			<p data-bind = "text: category"></p>
-			</div>
-
-
-			<div data-bind = "foreach: wikiList">
-			<a href = "" data-bind = "attr: {href: url}"><h1 data-bind = "text: name"></h1></a>
-			</div>
-		</article>
-		<article class = "article" id = "species">
-			<div data-bind = "foreach: species">
-			<h1 data-bind = "text: name"></h1>
-			<p data-bind = "text: category"></p>
-			</div>
-
-
-			<div data-bind = "foreach: wikiList">
-			<a href = "" data-bind = "attr: {href: url}"><h1 data-bind = "text: name"></h1></a>
-			</div>
-		</article>
-
-	</section>
-	<div id = "pic" tabindex = "-1">
-	<img id = "bird" src = "https://upload.wikimedia.org/wikipedia/commons/0/0b/Charadrius-melodus-004_edit.jpg">
-	</div>
+	<ul>
+	<li v-for="country in countries">
+		{{ country }}
+	</li>
+	</ul>
+	<ul>
+	<li v-for="threat in threats">
+		{{ threat.title }}
+	</li>
+	</ul>
+	<img v-bind:src="imgSrc" class="image"></img>
+	
+	
 </div>
 
 
@@ -69,7 +46,7 @@
 
 
 
-<script src = "js/libs/ko.js"></script>
+<script src = "js/libs/vue.js"></script>
 <script src = "js/libs/jquery.js"></script>
 <!-- <script src =  -->
 <script src = "js/species.js"></script>

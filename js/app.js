@@ -2,13 +2,29 @@
 			This file contains the view model, json loading, and some helper functions. 
 
 */
-speciesData = [{
-	name: 'bear',
-	category: 'not threatened'
-}, {
-	name: 'monkey',
-	category: 'not THAT threatened'
-}]
+
+
+
+var vm = new Vue({
+	el: '.main',
+	data: {
+		vernacular: null,
+		scientific: null,
+		countries: null,
+		threats: null,
+		imgSrc: '',
+		excerpt: null
+	}
+})
+
+
+// speciesData = [{
+// 	name: 'bear',
+// 	category: 'not threatened'
+// }, {
+// 	name: 'monkey',
+// 	category: 'not THAT threatened'
+// }]
 
 var countryCodes, redListCountries;
 window.onload = function() {
@@ -29,30 +45,32 @@ window.onload = function() {
 		})
 	})
 
-
-}
-
-
-
-function ViewModel() {
-	self = this;
-
-	this.species = ko.observableArray([]);
-
-	speciesData.forEach(function(babeData) {
-		//self.species.push(new Species(babeData))
-	})
-
-	this.currentSpecies = ko.observable(this.species[0]);
-
-	this.wikiList = ko.observableArray([]);
+	highlightCountries([]);
 
 
 }
 
-// Activates knockout.js
-app = new ViewModel()
-ko.applyBindings(app);
+
+
+// function ViewModel() {
+// 	self = this;
+
+// 	this.species = ko.observableArray([]);
+
+// 	speciesData.forEach(function(babeData) {
+// 		//self.species.push(new Species(babeData))
+// 	})
+
+// 	this.currentSpecies = ko.observable(this.species[0]);
+
+// 	this.wikiList = ko.observableArray([]);
+
+
+// }
+
+// // Activates knockout.js
+// app = new ViewModel()
+// ko.applyBindings(app);
 
 
 // $.ajax('https://en.wikipedia.org/w/api.php?action=query')

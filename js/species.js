@@ -37,7 +37,7 @@ function Species(input) {
 
 	this.redirects = 0;
 
-	
+	//vm.species = this;
 	
 }
 
@@ -83,6 +83,7 @@ Species.prototype.getTaxonomy = function(species) {
 				} else {
 					self.taxonomy = response.result;
 					self.scientific = response.name;
+					vm.scientific = self.scientific;
 
 					//the input is working fine with red list, continue making api calls
 					self.getCountriesBySpecies(self.input);
@@ -112,12 +113,13 @@ Species.prototype.getCountriesBySpecies = function(species) {
 			// 	return a.category === 'EN';
 			// });
 			var raw = response.result;
-			countries = [];
+			var countries = [];
 			raw.forEach(function(r) {
 				countries.push(r.country);
 			})
 			if (countries.length > 0) {
 				self.countries = countries;
+				vm.countries = self.countries;
 				highlightCountries(countries)
 			}
 			//self.countries = countries;
@@ -167,6 +169,7 @@ Species.prototype.getThreatsBySpecies = function(species) {
 			//console.log(response)
 			if (response.result.length > 0) {
 				self.threats = response.result;
+				vm.threats = self.threats;
 			}
 			
 		}
@@ -188,6 +191,7 @@ Species.prototype.getWikiExcerpt = function(article) {
 			var excerpt = r.query.pages[pageId].extract;
 
 			self.excerpt = excerpt;
+			vm.excerpt = self.excerpt;
 		},
 		error: function() {
 			self.excerpt = 'Information on this species could not be retrieved.'
@@ -232,6 +236,7 @@ Species.prototype.getWikiImgSrc = function(articleName) {
 
 					//console.log(res.query.pages[pageId].imageinfo);
 					self.imgPath = path;
+					vm.imgSrc = self.imgPath;
 				},
 				error: function() {
 					self.imgError = "An image for the " + self.species + " could not be fetched."
@@ -263,6 +268,7 @@ Species.prototype.getWikiEndpoint = function (title) {
 			//console.log(r);
 			//console.log(r.query.pages[pageId].title);
 			self.vernacular = r.query.pages[pageId].title;
+			vm.vernacular = self.vernacular;
 			self.getWikiExcerpt(self.vernacular);
 			self.getWikiImgSrc(self.vernacular);
 			self.getTaxonomy(self.input);

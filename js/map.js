@@ -186,7 +186,8 @@ function initMap() {
 			lng: 150.644
 		},
 		zoom: 3,
-		styles: styles
+		styles: styles,
+		mapTypeId: 'hybrid'
 	});
 	map.data.loadGeoJson("js/world.geo.json");
 
