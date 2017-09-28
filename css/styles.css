@@ -13,20 +13,64 @@
 	position:fixed;
 	/*background-color:white;
 	opacity:0.618;*/
-	background-color: rgba(255, 255, 255, 0.68);
+	background-color: rgba(87, 255, 255, 0.69);
 	width:100%;
 	/*top:61.8%;*/
 	/*height:28.2%;*/
 	/*z-index:1;*/
 	
-	font-family:Arial;
+	font-family:monospace;
 
-  	display: flex; /* or inline-flex */
-  	justify-content: space-around;
-  	flex-wrap: wrap;
+  	
   	/*align-items: center;*/
 
 	
+}
+
+.excerpt {
+	font-size:16px;
+	max-height:100px;
+	overflow:scroll;
+	margin:10px;
+	background-color: rgba(25, 255, 255, 0.1)
+}
+
+.title {
+	background-color:black;
+	font-size:20px;
+	color:white;
+	padding:3px;
+}
+
+.info {
+	max-height:100px;
+	max-width:200px;
+	overflow:scroll;
+	border-style:solid;
+	padding:5px;
+	font-size:14px;
+	background-color: rgba(25, 255, 255, 0.1)
+	/*border:5px;*/
+}
+
+.sidebar {
+	position:fixed;
+	left:0px;
+	top:0px;
+	height:100%;
+	width:200px;
+	text-align:right;
+	background-color: rgba(255, 255, 255, 0.68);
+}
+
+.topbar {
+	position:fixed;
+	left:200px;
+	top:0px;
+	display: flex; /* or inline-flex */
+  	justify-content: space-around;
+  	flex-wrap: wrap;
+  	background-color: rgba(255, 255, 255, 0.68);
 }
 
 
@@ -36,6 +80,10 @@ html, body {
         padding: 0;
         background-color:black;
 
+}
+
+ul {
+	padding:15px;
 }
 
 .image {

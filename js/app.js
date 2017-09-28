@@ -47,6 +47,8 @@ window.onload = function() {
 
 	highlightCountries([]);
 
+	love = new Species('red panda');
+
 
 }
 

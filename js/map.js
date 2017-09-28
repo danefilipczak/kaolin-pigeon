@@ -187,7 +187,7 @@ function initMap() {
 		},
 		zoom: 3,
 		styles: styles,
-		mapTypeId: 'hybrid'
+		// mapTypeId: 'hybrid'
 	});
 	map.data.loadGeoJson("js/world.geo.json");
 
