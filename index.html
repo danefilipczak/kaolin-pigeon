@@ -25,6 +25,50 @@
 				<i>{{scientific}}</i>
 			
 		</span>
+
+
+		<!-- Rounded switch -->
+		<div class="switchLabel">
+			<span class = "label">
+				Threats
+				<label class="switch">
+		  			<input type="checkbox" v-model="showThreats">
+		  			<span class="slider round"></span>
+				</label>
+			</span>
+		</div>
+		
+
+		<transition name="fade">
+			<div class="info" v-if="showThreats">
+				<ul>
+				<li v-for="threat in threats">
+					{{ threat.title }}
+				</li>
+				</ul>
+			</div>
+		</transition>
+
+		<div class="switchLabel">
+			<span class = "label">
+				Countries
+				<label class="switch">
+		  			<input type="checkbox" v-model="showCountries">
+		  			<span class="slider round"></span>
+				</label>
+			</span>
+		</div>
+		
+
+		<transition name="fade">
+			<div class="info" v-if="showCountries">
+			<ul>
+			<li v-for="country in countries">
+				{{ country }}
+			</li>
+			</ul>
+		</div>
+		</transition>
 	</section>
 
 
@@ -38,20 +82,8 @@
 		
 
 
-		<div class="info">
-			<ul>
-			<li v-for="country in countries">
-				{{ country }}
-			</li>
-			</ul>
-		</div>
-		<div class="info">
-			<ul>
-			<li v-for="threat in threats">
-				{{ threat.title }}
-			</li>
-			</ul>
-		</div>
+		
+		
 		<img v-bind:src="imgSrc" class="image"></img>
 	</section>
 	

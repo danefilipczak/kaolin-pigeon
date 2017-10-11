@@ -13,10 +13,11 @@ var vm = new Vue({
 		countries: null,
 		threats: null,
 		imgSrc: '',
-		excerpt: null
+		excerpt: null,
+		showThreats: false,
+		showCountries: false
 	}
 })
-
 
 // speciesData = [{
 // 	name: 'bear',
