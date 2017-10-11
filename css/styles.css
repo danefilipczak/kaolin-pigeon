@@ -27,11 +27,34 @@
 	
 }
 
+.taxonomy {
+
+	max-height:100px;
+	max-width:200px;
+	overflow:scroll;
+	border-style:solid;
+	padding:5px;
+	font-size:14px;
+	background-color: rgba(25, 255, 255, 0.1)
+	/*border:5px;*/
+
+}
+
+.taxonomyContainer {
+	width:100%;
+	/*background-color:green;*/
+	display: flex; /* or inline-flex */
+  	justify-content: space-around;
+  	flex-wrap: wrap;
+}
+
 .excerpt {
 	font-size:16px;
-	max-height:100px;
+	max-width:61%;
+	max-height:180px;
 	overflow:scroll;
-	margin:10px;
+	margin:0px;
+	padding:10px;
 	background-color: rgba(25, 255, 255, 0.1)
 }
 

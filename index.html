@@ -14,13 +14,13 @@
 
 	<section class="sidebar">
 		<br>
-		<span class="title">
+		<span class="title" v-show="vernacular">
 			
 				{{vernacular}}
 			
 		</span>
 		<br><br>
-		<span class="title">
+		<span class="title" v-show="scientific">
 			
 				<i>{{scientific}}</i>
 			
@@ -85,6 +85,24 @@
 		
 		
 		<img v-bind:src="imgSrc" class="image"></img>
+
+		<div class="taxonomyContainer">
+			<div class="taxonomy">
+				something abot genus
+			</div>
+			<div class="taxonomy">
+				something abot kingdom
+			</div>
+			<div class="taxonomy">
+				something abot phylum
+			</div>
+			<div class="taxonomy">
+				something abot order
+			</div>
+			<div class="taxonomy">
+				something aot species
+			</div>
+		</div>
 	</section>
 	
 	

@@ -31,6 +31,7 @@ function Species(input) {
 
 	self.imgPath;
 	self.excerpt;
+	self.taxonomy;
 
 	this.getWikiEndpoint(this.input);
 
