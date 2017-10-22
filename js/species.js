@@ -39,7 +39,7 @@ function Species(input) {
 	this.redirects = 0;
 
 	vm.species = this;
-	
+
 }
 
 
@@ -76,8 +76,8 @@ Species.prototype.getTaxonomy = function(species) {
 			// })
 			// self.countries = countries;
 			console.log(response);
-			try{
-				if(response.result.length == 0){
+			try {
+				if (response.result.length == 0) {
 					//species not found under that name, try a redirect
 					self.getWikiRedirects(self.vernacular);
 					console.log('no species found under that name, querying redirects')
@@ -92,11 +92,10 @@ Species.prototype.getTaxonomy = function(species) {
 					self.getThreatsBySpecies(self.input);
 					self.getHabitatsBySpecies(self.input);
 					console.log('found')
-					//console.log(response);
-					//self.taxonomy = new Taxonomy(result.response)
+						//console.log(response);
+						//self.taxonomy = new Taxonomy(result.response)
 				}
-			}
-			catch(err){
+			} catch (err) {
 				console.log('it seems like red list doesn\'t have info on that species')
 			}
 			//console.log(countries);
@@ -121,6 +120,7 @@ Species.prototype.getCountriesBySpecies = function(species) {
 			})
 			if (countries.length > 0) {
 				self.countries = countries;
+				self.setMap();
 				vm.countries = self.countries;
 				highlightCountries(countries)
 			}
@@ -148,7 +148,7 @@ Species.prototype.getHabitatsBySpecies = function(species) {
 			if (response.result.length > 0) {
 				self.habitats = response.result;
 			}
-			
+
 		}
 	});
 
@@ -173,7 +173,7 @@ Species.prototype.getThreatsBySpecies = function(species) {
 				self.threats = response.result;
 				vm.threats = self.threats;
 			}
-			
+
 		}
 	});
 
@@ -250,7 +250,7 @@ Species.prototype.getWikiImgSrc = function(articleName) {
 
 
 
-Species.prototype.getWikiEndpoint = function (title) {
+Species.prototype.getWikiEndpoint = function(title) {
 	//Follows wikipedia redirects and returns the final article endpoint. 
 	//usefull for converting scientific names into vernacular names. 
 	var self = this;
@@ -283,7 +283,7 @@ Species.prototype.getWikiEndpoint = function (title) {
 }
 
 
-Species.prototype.getWikiRedirects = function (title) {
+Species.prototype.getWikiRedirects = function(title) {
 	//Gets the pages that redirect to a certain article. Useful for deriving a scientific name from a vernacular. 
 	var self = this;
 	// var url = 'https://en.wikipedia.org/w/api.php?&format=json&action=query&prop=extracts&exintro=&explaintext=&titles=' + article;
@@ -303,21 +303,20 @@ Species.prototype.getWikiRedirects = function (title) {
 			//console.log(r);
 			//console.log(r.query.pages[pageId].title);
 			//console.log(r.query.pages[pageId].redirects[0].title)
-			try{
+			try {
 				var scientific = r.query.pages[pageId].redirects[self.redirects].title;
 				self.getTaxonomy(scientific);
 				self.getCountriesBySpecies(scientific);
 				self.getThreatsBySpecies(scientific);
 				self.getHabitatsBySpecies(scientific);
-			}
-			catch(err){
+			} catch (err) {
 				console.log('can\'t find this species in redlist');
 			}
-			
+
 			// self.getWikiExcerpt(self.vernacular);
 			// self.getWikiImgSrc(self.vernacular);
 			//self.getTaxonomy(self.input);
-			
+
 			self.redirects++;
 		},
 		error: function() {
@@ -327,7 +326,7 @@ Species.prototype.getWikiRedirects = function (title) {
 
 }
 
-Species.prototype.parseTaxonomy = function(){
+Species.prototype.parseTaxonomy = function() {
 	console.log('info for taxonomy parsing');
 	console.log(this.taxonomy);
 	vm.kingdom = this.taxonomy[0].kingdom.toLowerCase();
@@ -344,5 +343,49 @@ Species.prototype.parseTaxonomy = function(){
 	console.log(vm.genus)
 }
 
+Array.prototype.flatten = function() {
+	return this.reduce(function(c, x) {
+		return Array.isArray(x) ? c.concat(x.flatten()) : c.concat(x);
+	}, []);
+}
 
 
+Species.prototype.setMap = function() {
+	var iso2Array = [];
+	this.countries.forEach(function(c) {
+		iso2Array.push(redListCountries[c])
+	})
+
+	//converto iso2 array to iso 3 array from country codes data
+	var iso3Array = [];
+	iso2Array.forEach(function(c) {
+		iso3Array.push(countryCodes[c][0])
+	})
+
+	console.log('for mapppp')
+	
+
+	var countryPoints = [];
+	iso3Array.forEach(function(c) {
+		world.features.forEach(function(f){
+			if(f.id == c){
+				countryPoints.push(f.geometry.coordinates)
+			}
+		})
+	})
+
+	countryPoints = countryPoints.flatten();
+
+	console.log(countryPoints);
+
+	var bound = new google.maps.LatLngBounds();
+
+
+
+	for (i = 0; i < countryPoints.length; i+=2) {
+		bound.extend(new google.maps.LatLng(countryPoints[i+1], countryPoints[i]));
+
+		// OTHER CODE
+	}
+	map.fitBounds(bound);
+}
