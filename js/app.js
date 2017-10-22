@@ -61,7 +61,7 @@ window.onload = function() {
 	highlightCountries([]);
 
 	// love = new Species('red panda');
-	var panda = new Species('panda');
+	var panda = new Species('eastern gorilla');
 	vm.species = panda;
 
 

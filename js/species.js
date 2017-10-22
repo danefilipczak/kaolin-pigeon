@@ -5,6 +5,16 @@
 
 function Species(input) {
 
+	vm.excerpt = null;
+	vm.scientific = null
+	// species: null,
+	vm.vernacular = null;
+	vm.scientific = null;
+	vm.countries = null;
+	vm.threats = null;
+	vm.imgSrc = '';
+	vm.excerpt = null;
+
 	var self = this;
 	this.input = input;
 

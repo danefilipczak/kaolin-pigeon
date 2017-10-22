@@ -42,7 +42,7 @@ function highlightCountries(countryArray){
 		}
 		return {
 			visible: visible,
-			fillColor: 'red',
+			fillColor: 'olive',
 			fillOpacity: 0.69,
 			strokeWeight: 0
 		};
@@ -75,7 +75,7 @@ function initMap() {
 		featureType: "all",
 		elementType: "labels",
 		stylers: [{
-			//visibility: "off"
+			// visibility: "off"
 		}]
 	}, {
 		"featureType": "water",
@@ -93,13 +93,13 @@ function initMap() {
 		"featureType": "landscape",
 		"elementType": "all",
 		"stylers": [{
-			"hue": "green"
+			"hue": "blue"
 		}, {
 			"saturation": 100
 		}, {
 			"lightness": -49
 		}, {
-			"visibility": "on"
+			"visibility": "off"
 		}]
 	}, {
 		"featureType": "poi",

@@ -2,7 +2,7 @@
 <html>
 <head>
 <link rel = "stylesheet" href = "css/styles.css">
-<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
 <title>kaolin pigeon</title>
 
 
@@ -26,7 +26,7 @@
 			
 		</span>
 
-
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		<!-- Rounded switch -->
 		<div class="switchLabel" v-show="threats">
 			<span class = "label">
@@ -43,7 +43,10 @@
 			<div class="info" v-if="showThreats">
 				<ul>
 				<li v-for="threat in threats">
-					{{ threat.title }}
+					<span class = "listText">
+						{{ threat.title }}
+					</span>
+					<br><br>
 				</li>
 				</ul>
 			</div>
@@ -64,7 +67,10 @@
 			<div class="info" v-show="showCountries" transition="expand">
 				<ul>
 				<li v-for="country in countries">
-					{{ country }}
+					<span class = "listText">
+						{{ country }}
+					</span>
+					<br><br>
 				</li>
 				</ul>
 			</div>
