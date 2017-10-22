@@ -38,7 +38,7 @@ function Species(input) {
 
 	this.redirects = 0;
 
-	//vm.species = this;
+	vm.species = this;
 	
 }
 
@@ -83,6 +83,7 @@ Species.prototype.getTaxonomy = function(species) {
 					console.log('no species found under that name, querying redirects')
 				} else {
 					self.taxonomy = response.result;
+					self.parseTaxonomy();
 					self.scientific = response.name;
 					vm.scientific = self.scientific;
 
@@ -324,6 +325,23 @@ Species.prototype.getWikiRedirects = function (title) {
 		}
 	})
 
+}
+
+Species.prototype.parseTaxonomy = function(){
+	console.log('info for taxonomy parsing');
+	console.log(this.taxonomy);
+	vm.kingdom = this.taxonomy[0].kingdom.toLowerCase();
+	console.log(vm.kingdom)
+	vm.phylum = this.taxonomy[0].phylum.toLowerCase();
+	console.log(vm.phylum)
+	vm.class = this.taxonomy[0].class.toLowerCase();
+	console.log(vm.class)
+	vm.order = this.taxonomy[0].order.toLowerCase();
+	console.log(vm.order)
+	vm.family = this.taxonomy[0].family.toLowerCase();
+	console.log(vm.family)
+	vm.genus = this.taxonomy[0].genus.toLowerCase();
+	console.log(vm.genus)
 }
 
 

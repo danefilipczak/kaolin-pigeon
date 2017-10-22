@@ -20,7 +20,7 @@
 			
 		</span>
 		<br><br>
-		<span class="title" v-show="scientific">
+		<span class="title" v-if="scientific">
 			
 				<i>{{scientific}}</i>
 			
@@ -28,7 +28,7 @@
 
 
 		<!-- Rounded switch -->
-		<div class="switchLabel">
+		<div class="switchLabel" v-show="threats">
 			<span class = "label">
 				Threats
 				<label class="switch">
@@ -39,7 +39,7 @@
 		</div>
 		
 
-		<transition name="fade">
+		<transition name="expand">
 			<div class="info" v-if="showThreats">
 				<ul>
 				<li v-for="threat in threats">
@@ -49,7 +49,7 @@
 			</div>
 		</transition>
 
-		<div class="switchLabel">
+		<div class="switchLabel" v-show="countries">
 			<span class = "label">
 				Countries
 				<label class="switch">
@@ -60,14 +60,14 @@
 		</div>
 		
 
-		<transition name="fade">
-			<div class="info" v-if="showCountries">
-			<ul>
-			<li v-for="country in countries">
-				{{ country }}
-			</li>
-			</ul>
-		</div>
+		<transition name="expand">
+			<div class="info" v-show="showCountries" transition="expand">
+				<ul>
+				<li v-for="country in countries">
+					{{ country }}
+				</li>
+				</ul>
+			</div>
 		</transition>
 	</section>
 
