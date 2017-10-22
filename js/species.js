@@ -14,6 +14,12 @@ function Species(input) {
 	vm.threats = null;
 	vm.imgSrc = '';
 	vm.excerpt = null;
+	vm.kingdom = null;
+	vm.phylum = null;
+	vm.klass = null;
+	vm.order = null;
+	vm.genus = null;
+	vm.family= null;
 
 	var self = this;
 	this.input = input;
@@ -343,7 +349,7 @@ Species.prototype.parseTaxonomy = function() {
 	console.log(vm.kingdom)
 	vm.phylum = this.taxonomy[0].phylum.toLowerCase();
 	console.log(vm.phylum)
-	vm.class = this.taxonomy[0].class.toLowerCase();
+	vm.klass = this.taxonomy[0].class.toLowerCase();
 	console.log(vm.class)
 	vm.order = this.taxonomy[0].order.toLowerCase();
 	console.log(vm.order)

@@ -16,7 +16,14 @@ var vm = new Vue({
 		imgSrc: '',
 		excerpt: null,
 		showThreats: false,
-		showCountries: false
+		showCountries: false,
+		kingdom: null,
+		phylum: null,
+		klass: null,
+		order: null,
+		family: null,
+		genus: null
+
 	},
 	// watch: {
 	// 	species: function(newSpecies, old) {
