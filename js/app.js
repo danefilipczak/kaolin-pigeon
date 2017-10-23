@@ -9,6 +9,7 @@ var vm = new Vue({
 	el: '.app',
 	data: {
 		intro: true,
+		showRandom: false,
 		species: null,
 		vernacular: null,
 		scientific: null,
@@ -23,13 +24,24 @@ var vm = new Vue({
 		klass: null,
 		order: null,
 		family: null,
-		genus: null
+		genus: null,
+		vetted: [
+			'red panda',
+			'Eulemur flavifrons',
+			'Lipotes vexillifer',
+			'Gymnobelideus leadbeateri',
+			'Canis rufus',
+			'Mustela lutreola',
+			'Phocoena sinus'
+
+
+		]
 
 	},
 	methods: {
-		toggleIntro: function(message) {
-			this.intro=false;
-			console.log('togg')
+		next: function(message) {
+			// var item = ;
+			var dog = new Species(this.vetted[Math.floor(Math.random()*this.vetted.length)])
 		}
 	}
 	// watch: {

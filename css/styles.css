@@ -15,6 +15,18 @@
 	vertical-align:middle;
 }
 
+.navigation{
+	position:fixed;
+	right:0px;
+	top:20px;
+	width:150px;
+
+	/*height:180px;*/
+	/*background-color:red;*/
+	text-align:center;
+
+}
+
 .bigArrow{
 	margin-top:40px;
 	font-size:60px;
@@ -98,6 +110,14 @@ li {
 	cursor:pointer;
 }
 
+.randomTypes {
+	position:fixed;
+	right:0;
+	top:220px;
+	background-color:yellow;
+	width:200px;
+}
+
 .taxonLabel{
 	font-size:15px;
 	background-color:black;
@@ -108,12 +128,30 @@ li {
 
 .excerpt {
 	font-size:20px;
-	max-width:61%;
+	/*max-width:61%;*/
+	display:inline-block;
 	/*max-height:180px;*/
 	overflow-y:scroll;
-	margin:0px;
+	margin-top:8px;
 	padding:10px;
-	background-color: rgba(25, 255, 255, 0.8)
+	max-height:200px;
+	/*height:200px;*/
+	background-color: rgba(66, 226, 244, 0.8);
+
+
+	width: -moz-calc(100% - 200px);
+
+/* WebKit */
+
+	width: -webkit-calc(100% - 200px);
+
+/* Opera */
+
+	width: -o-calc(100% - 200px);
+
+/* Standard */
+
+	width: calc(100% - 200px);
 	/*background-color:0.9;*/
 }
 
@@ -122,6 +160,18 @@ li {
 	font-size:20px;
 	color:white;
 	padding:3px;
+}
+
+.next {
+	background-color:black;
+	font-size:20px;
+	color:white;
+	padding:10px;
+
+}
+
+.next:hover {
+	cursor:pointer;
 }
 
 .listText {
@@ -160,12 +210,31 @@ li {
 .topbar {
 	position:fixed;
 	left:200px;
+	display:inline-block;
 	top:0px;
-	max-height:180px;
-	width:100%;
+	height:200px;
+	/*overflow:scroll;*/
+	/*width:80%;*/
+
+
+	/* Firefox */
+
+	width: -moz-calc(100% - 350px);
+
+/* WebKit */
+
+	width: -webkit-calc(100% - 350px);
+
+/* Opera */
+
+	width: -o-calc(100% - 350px);
+
+/* Standard */
+
+	width: calc(100% - 350px);
 	/*display: flex; /* or inline-flex */
-  	justify-content: space-around;
-  	flex-wrap: wrap;*/
+  	/*justify-content: space-around;
+  	flex-wrap: wrap;*/*/
   	/*background-color: rgba(255, 255, 255, 0.68);*/
 }
 
@@ -183,9 +252,15 @@ ul {
 }
 
 .image {
-	max-width:200px;
-	max-height:170px;
+	margin:10px;
+	display:inline-block;
 	opacity:1;
+	float:right;
+}
+
+.thumbnail{
+	width:150px;
+	height:auto;
 }
 .switch {
   position: relative;

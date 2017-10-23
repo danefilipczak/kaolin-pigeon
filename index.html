@@ -118,11 +118,11 @@
 
 		</div>
 
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br>
 		<!-- Rounded switch -->
 		<div class="switchLabel" v-show="threats">
 			<span class = "label">
-				Threats Imposed by Humans
+				Human-Imposed Threats
 				<label class="switch">
 		  			<input type="checkbox" v-model="showThreats">
 		  			<span class="slider round"></span>
@@ -171,18 +171,49 @@
 
 
 	<section class="topbar">
+
+		<div class="navigation">
+
+
+			<span class="next" v-on:click="next()">
+			next
+			</span>
+
+
+			<!-- <div class="switchLabel">
+				<span class = "label">
+					by type
+					<label class="switch">
+			  			<input type="checkbox" v-model="showRandom">
+			  			<span class="slider round"></span>
+					</label>
+				</span>
+			</div>
+			
+
+			<transition name="expand">
+				<div class="randomTypes" v-if="showRandom">
+					<span class="taxonName">hubba</span>
+				</div>
+			</transition> -->
+
+		</div>
 		
 		<div class="excerpt">
-			<span>
-				{{excerpt}}
-			</span>
+			<transition name="fade">
+				<span v-if="excerpt">
+					{{excerpt}}
+				</span>
+			</transition>
 		</div>
 		
 
 
 		
-		
-		<img v-bind:src="imgSrc" class="image"></img>
+		<div class="image">
+			<img v-bind:src="imgSrc" class="thumbnail">
+			</img>
+		</div>
 
 	
 	</section>
