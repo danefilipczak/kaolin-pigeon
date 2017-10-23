@@ -3,14 +3,42 @@
 <head>
 <link rel = "stylesheet" href = "css/styles.css">
 <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
-<title>kaolin pigeon</title>
+<title>Holocene</title>
 
 
 </head>
 
 <body>
 
+<div class = "app">
+
+<transition name="fade">
+	<div class="intro" v-if="intro">
+		<div class="introText">
+		
+			Life on Earth is currently experiencing its sixth major extinction event, the 
+			<span class = "taxonName">
+				<a href="https://en.wikipedia.org/wiki/Holocene_extinction" target="_blank">
+					Holocene Extinction.
+				</a>
+			</span>
+			<br>
+			This is a look into those species that are considered to be <i>critically endangered</i>,<br> and shows how such species relate to other life and to the geography of the planet. 
+			<br>
+			<div class="bigArrow" v-on:click="intro=false">
+
+				&#11015;
+			</div>
+		
+		</div>
+	</div>
+</transition>
+
+
+
 <div class = "main">
+
+	
 
 	<section class="sidebar">
 		<br>
@@ -162,7 +190,7 @@
 	
 </div>
 
-
+</div>
 <div id = "map"></div>
 
 

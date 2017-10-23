@@ -6,8 +6,9 @@
 
 
 var vm = new Vue({
-	el: '.main',
+	el: '.app',
 	data: {
+		intro: true,
 		species: null,
 		vernacular: null,
 		scientific: null,
@@ -25,6 +26,12 @@ var vm = new Vue({
 		genus: null
 
 	},
+	methods: {
+		toggleIntro: function(message) {
+			this.intro=false;
+			console.log('togg')
+		}
+	}
 	// watch: {
 	// 	species: function(newSpecies, old) {
 	// 		//to work with changes in someOtherProp
