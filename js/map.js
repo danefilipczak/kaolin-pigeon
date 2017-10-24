@@ -93,14 +93,11 @@ function initMap() {
 		"featureType": "landscape",
 		"elementType": "all",
 		"stylers": [{
-			"hue": "blue"
-		}, {
-			"saturation": 100
-		}, {
-			"lightness": -49
-		}, {
-			"visibility": "off"
-		}]
+                "color": "#000000"
+            },
+            {
+                "lightness": 50
+            }]
 	}, {
 		"featureType": "poi",
 		"elementType": "all",

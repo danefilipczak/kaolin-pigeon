@@ -81,10 +81,35 @@ li {
 	
 }
 
+.taxonButton:hover {
+	cursor:pointer;
+}
+
+
+.taxonButton:hover .taxonName{
+	transition:all 0.2s;
+	padding-left:50px;
+}
+
+.taxonButton:hover .smallArrow{
+	transition:all 0.2s;
+
+	/*-ms-transform: rotate(270deg);*/ /* IE 9 */
+    /*-webkit-transform: rotate(270deg);*/ /* Chrome, Safari, Opera */
+    /*transform: rotate(270deg);*/
+
+
+	color:lightblue;
+	font-size:20px;
+	/*left:7px;*/
+	/*top:-5px;*/
+
+}
+
 .taxonomy {
 
 
-
+	margin-top:20px;
 	/*max-height:100px;
 	max-width:200px;
 	/*overflow:scroll;*/
@@ -97,7 +122,8 @@ li {
 }
 
 .taxon {
-	margin:10px;
+	margin-bottom:10px;
+	/*margin:10px;*/
 }
 
 .taxonName {
@@ -118,6 +144,15 @@ li {
 	width:200px;
 }
 
+.smallArrow {
+	position:absolute;
+	left:15px;
+	color:white;
+	font-size:15px;
+	padding-right:55px;
+	margin-top:15px;
+}
+
 .taxonLabel{
 	font-size:15px;
 	background-color:black;
@@ -127,6 +162,8 @@ li {
 }
 
 .excerpt {
+	border-style:solid;
+	border-color:white;
 	font-size:20px;
 	/*max-width:61%;*/
 	display:inline-block;
@@ -136,7 +173,8 @@ li {
 	padding:10px;
 	max-height:200px;
 	/*height:200px;*/
-	background-color: rgba(66, 226, 244, 0.8);
+	background-color: lightblue;
+	opacity:0.85;
 
 
 	width: -moz-calc(100% - 200px);
@@ -329,6 +367,7 @@ input:checked + .slider:before {
 
 .label {
 	background-color:white;
+	padding-left:10px;
 }
 
 /*.fade-enter-active, .fade-leave-active {
