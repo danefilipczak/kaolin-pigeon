@@ -9,6 +9,8 @@ var vm = new Vue({
 	el: '.app',
 	data: {
 		intro: true,
+		shadowBox:false,
+		spiels: {},
 		showRandom: false,
 		species: null,
 		vernacular: null,
@@ -39,6 +41,12 @@ var vm = new Vue({
 
 	},
 	methods: {
+		showSpiel: function(taxonType){
+
+			this.excerpt = this.spiels[taxonType];
+			$('.excerpt').scrollTop(0);
+
+		},
 		next: function(message) {
 			// var item = ;
 			var dog = new Species(this.vetted[Math.floor(Math.random()*this.vetted.length)])

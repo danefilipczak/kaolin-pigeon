@@ -57,7 +57,7 @@
 		<div class="taxonomy">
 
 			<div class="taxon" v-show="kingdom">
-				<div class="taxonButton">
+				<div class="taxonButton" v-on:click="showSpiel('kingdom')">
 					<span class="smallArrow">
 						&#8681;
 					</span>
@@ -76,7 +76,7 @@
 			
 
 			<div class="taxon" v-show="phylum">
-				<div class="taxonButton">
+				<div class="taxonButton" v-on:click="showSpiel('phylum')">
 					<span class="smallArrow">
 						&#8681;
 					</span>
@@ -95,7 +95,7 @@
 			
 
 			<div class="taxon" v-show="klass">
-				<div class="taxonButton">
+				<div class="taxonButton" v-on:click="showSpiel('class')">
 					<span class="smallArrow">
 						&#8681;
 					</span>
@@ -113,7 +113,7 @@
 			
 
 			<div class="taxon" v-show="order">
-				<div class="taxonButton">
+				<div class="taxonButton" v-on:click="showSpiel('order')">
 					<span class="smallArrow">
 						&#8681;
 					</span>
@@ -132,7 +132,7 @@
 			
 
 			<div class="taxon" v-show="family">
-				<div class="taxonButton">
+				<div class="taxonButton" v-on:click="showSpiel('family')">
 					<span class="smallArrow">
 						&#8681;
 					</span>
@@ -151,7 +151,7 @@
 
 
 			<div class="taxon" v-show="genus">
-				<div class="taxonButton">
+				<div class="taxonButton" v-on:click="showSpiel('genus')">
 					<span class="smallArrow">
 						&#8681;
 					</span>
@@ -249,7 +249,7 @@
 		</div>
 		
 		<div class="excerpt">
-			<transition name="fade">
+			<transition name="twowayfade">
 				<span v-if="excerpt">
 					{{excerpt}}
 				</span>
@@ -266,6 +266,16 @@
 
 	
 	</section>
+
+
+	<transition name="twowayfade">
+		<div class="shadowBox" v-show="shadowBox">
+			<div class="shadow"></div>
+			<div class="largeImage">
+				<img v-bind:src="imgSrc">
+			</div>
+		</div>
+	</transition>
 	
 	
 </div>
