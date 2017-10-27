@@ -4,6 +4,17 @@
 */
 
 
+/*
+
+
+TO DO:
+-two way transitions on expansion
+bind threat and regions data
+navigation screen
+
+
+*/
+
 
 var vm = new Vue({
 	el: '.app',
@@ -12,21 +23,27 @@ var vm = new Vue({
 		shadowBox:false,
 		spiels: {},
 		showRandom: false,
-		species: null,
+		// species: null,
 		vernacular: null,
 		scientific: null,
 		countries: null,
 		threats: null,
-		imgSrc: '',
+		imgSrc: null,
+		species:null,
 		excerpt: null,
-		showThreats: false,
-		showCountries: false,
+		threatCheck: false,
+		countryCheck: false,
+		habitatCheck: false,
+		regionCheck:false,
 		kingdom: null,
 		phylum: null,
 		klass: null,
 		order: null,
 		family: null,
 		genus: null,
+		habitats:['forest', 'stream'],
+		regions:['up', 'down', 'all around'],
+		aside: '',
 		vetted: [
 			'red panda',
 			'Eulemur flavifrons',
@@ -40,7 +57,86 @@ var vm = new Vue({
 		]
 
 	},
+	computed: {
+
+		showCountries: function() {
+			this.regionCheck = false;
+			this.threatCheck = false;
+			this.habitatCheck = false;
+			// this.countryCheck = !this.countryCheck;
+			return this.countryCheck
+		},
+		// showThreats: function() {
+		// 	this.regionCheck = false;
+		// 	this.countryCheck = false;
+		// 	this.habitatCheck = false;
+		// 	return this.threatCheck;
+		// }
+
+	},
 	methods: {
+		showThreats: function(){
+
+			vm.countryCheck=false;
+			vm.habitatCheck=false;
+			vm.regionCheck = false;
+
+			if(this.threatCheck==true){
+				this.aside = 'threats'
+			} else {
+				// console.log('erasing aside')
+				this.aside = '';
+			}
+			
+		},
+		showCountries: function(){
+
+			vm.threatCheck=false;
+			vm.habitatCheck=false;
+			vm.regionCheck = false;
+
+			if(this.countryCheck==true){
+				this.aside = 'countries'
+			} else {
+				// console.log('erasing aside')
+				this.aside = '';
+			}
+			
+		},
+		showHabitats: function(){
+
+			vm.threatCheck=false;
+			vm.countryCheck=false;
+			vm.regionCheck = false;
+
+			if(this.habitatCheck==true){
+				this.aside = 'habitats'
+			} else {
+				// console.log('erasing aside')
+				this.aside = '';
+			}
+			
+		},
+
+		showRegions: function(){
+
+			vm.threatCheck=false;
+			vm.countryCheck=false;
+			vm.habitatCheck = false;
+
+			if(this.regionCheck==true){
+				this.aside = 'regions'
+			} else {
+				// console.log('erasing aside')
+				this.aside = '';
+			}
+			
+		},
+		toggleShadow: function() {
+
+			this.shadowBox = !this.shadowBox;
+
+		},
 		showSpiel: function(taxonType){
 
 			this.excerpt = this.spiels[taxonType];

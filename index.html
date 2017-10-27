@@ -3,6 +3,7 @@
 <head>
 <link rel = "stylesheet" href = "css/styles.css">
 <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <title>Holocene</title>
 
 
@@ -24,6 +25,8 @@
 			</span>
 			<br>
 			This is a look into those species that are considered to be <i>critically endangered</i>,<br> and shows how such species relate to other life and to the geography of the planet. 
+			<br><br>
+			All of these species will probably soon have disappeared.
 			<br>
 			<div class="bigArrow" v-on:click="intro=false">
 
@@ -42,20 +45,24 @@
 
 	<section class="sidebar">
 		<br>
-		<span class="title" v-show="vernacular">
-			
-				{{vernacular}}
-			
-		</span>
+		<transition name="twowayfade">
+			<span class="title" v-show="vernacular" v-on:click="showSpiel('species')">
+				
+					{{vernacular}}
+				
+			</span>
+		</transition>
 		<br><br>
-		<span class="title" v-if="scientific">
-			
-				<i>{{scientific}}</i>
-			
-		</span>
+		<transition name="twowayfade">
+			<span class="title" v-if="scientific" v-on:click="showSpiel('species')">
+				
+					<i>{{scientific}}</i>
+				
+			</span>
+		</transition>
 
 		<div class="taxonomy">
-
+		<transition name="twowayfade">
 			<div class="taxon" v-show="kingdom">
 				<div class="taxonButton" v-on:click="showSpiel('kingdom')">
 					<span class="smallArrow">
@@ -72,9 +79,10 @@
 				</div>
 				
 			</div>
+		</transition>
 
 			
-
+		<transition name="twowayfade">
 			<div class="taxon" v-show="phylum">
 				<div class="taxonButton" v-on:click="showSpiel('phylum')">
 					<span class="smallArrow">
@@ -91,9 +99,10 @@
 				</div>
 				
 			</div>
+		</transition>
 
 			
-
+		<transition name="twowayfade">
 			<div class="taxon" v-show="klass">
 				<div class="taxonButton" v-on:click="showSpiel('class')">
 					<span class="smallArrow">
@@ -109,9 +118,10 @@
 					<br>
 				</div>
 			</div>
+		</transition>
 
 			
-
+		<transition name="twowayfade">
 			<div class="taxon" v-show="order">
 				<div class="taxonButton" v-on:click="showSpiel('order')">
 					<span class="smallArrow">
@@ -128,9 +138,10 @@
 				</div>
 				
 			</div>
+		</transition>
 
 			
-
+		<transition name="twowayfade">
 			<div class="taxon" v-show="family">
 				<div class="taxonButton" v-on:click="showSpiel('family')">
 					<span class="smallArrow">
@@ -147,9 +158,10 @@
 				</div>
 				
 			</div>
+		</transition>
 
 
-
+		<transition name="twowayfade">
 			<div class="taxon" v-show="genus">
 				<div class="taxonButton" v-on:click="showSpiel('genus')">
 					<span class="smallArrow">
@@ -164,24 +176,26 @@
 					</span>
 				</div>
 			</div>
+		</transition>
 
 		</div>
 
 		<br><br><br><br><br><br><br>
 		<!-- Rounded switch -->
-		<div class="switchLabel" v-show="threats">
-			<span class = "label">
-				Human-Imposed Threats
-				<label class="switch">
-		  			<input type="checkbox" v-model="showThreats">
-		  			<span class="slider round"></span>
-				</label>
-			</span>
-		</div>
-		
+		<transition name="twowayfade">
+			<div class="switchLabel" v-show="threats">
+				<span class = "label">
+					Human-Imposed Threats
+					<label class="switch">
+			  			<input type="checkbox" v-model="threatCheck" v-on:click="showThreats">
+			  			<span class="slider round"></span>
+					</label>
+				</span>
+			</div>
+		</transition>
 
 		<transition name="expand">
-			<div class="info" v-if="showThreats">
+			<div class="info" v-show="aside == 'threats' ">
 				<ul>
 				<li v-for="threat in threats">
 					<span class = "listText">
@@ -193,19 +207,21 @@
 			</div>
 		</transition>
 
-		<div class="switchLabel" v-show="countries">
-			<span class = "label">
-				Countries
-				<label class="switch">
-		  			<input type="checkbox" v-model="showCountries">
-		  			<span class="slider round"></span>
-				</label>
-			</span>
-		</div>
+		<transition name="twowayfade">
+			<div class="switchLabel" v-show="countries">
+				<span class = "label">
+					Countries
+					<label class="switch">
+			  			<input type="checkbox" v-model="countryCheck" v-on:click="showCountries">
+			  			<span class="slider round"></span>
+					</label>
+				</span>
+			</div>
+		</transition>
 		
 
 		<transition name="expand">
-			<div class="info" v-show="showCountries" transition="expand">
+			<div class="info" v-show="aside == 'countries' ">
 				<ul>
 				<li v-for="country in countries">
 					<span class = "listText">
@@ -216,6 +232,64 @@
 				</ul>
 			</div>
 		</transition>
+
+
+
+		<transition name="twowayfade">
+			<div class="switchLabel" v-show="habitats">
+				<span class = "label">
+					Habitats
+					<label class="switch">
+			  			<input type="checkbox" v-model="habitatCheck" v-on:click="showHabitats">
+			  			<span class="slider round"></span>
+					</label>
+				</span>
+			</div>
+		</transition>
+		
+
+		<transition name="expand">
+			<div class="info" v-show="aside == 'habitats' ">
+				<ul>
+				<li v-for="habitat in habitats">
+					<span class = "listText">
+						{{ habitat }}
+					</span>
+					<br><br>
+				</li>
+				</ul>
+			</div>
+		</transition>
+
+
+		<transition name="twowayfade">
+			<div class="switchLabel" v-show="regions">
+				<span class = "label">
+					Regions
+					<label class="switch">
+			  			<input type="checkbox" v-model="regionCheck" v-on:click="showRegions">
+			  			<span class="slider round"></span>
+					</label>
+				</span>
+			</div>
+		</transition>
+		
+
+		<transition name="expand">
+			<div class="info" v-show="aside == 'regions' ">
+				<ul>
+				<li v-for="region in regions">
+					<span class = "listText">
+						{{ region }}
+					</span>
+					<br><br>
+				</li>
+				</ul>
+			</div>
+		</transition>
+
+
+
 	</section>
 
 
@@ -259,17 +333,20 @@
 
 
 		
-		<div class="image">
-			<img v-bind:src="imgSrc" class="thumbnail">
-			</img>
-		</div>
+			<div class="image" v-on:click="toggleShadow()" >
+				<transition name="twowayfade">
+					<img v-bind:src="imgSrc" class="thumbnail" v:if="imgSrc">
+					</img>
+				</transition>
+			</div>
+		
 
 	
 	</section>
 
 
 	<transition name="twowayfade">
-		<div class="shadowBox" v-show="shadowBox">
+		<div class="shadowBox" v-show="shadowBox" v-on:click="toggleShadow">
 			<div class="shadow"></div>
 			<div class="largeImage">
 				<img v-bind:src="imgSrc">
