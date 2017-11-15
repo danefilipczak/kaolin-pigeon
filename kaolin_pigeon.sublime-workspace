@@ -15,7 +15,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 4519,
+				"buffer_size": 7721,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -24,7 +24,7 @@
 			"file": "js/map.js",
 			"settings":
 			{
-				"buffer_size": 4408,
+				"buffer_size": 4412,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -33,7 +33,7 @@
 			"file": "js/app.js",
 			"settings":
 			{
-				"buffer_size": 3109,
+				"buffer_size": 4964,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -71,7 +71,7 @@
 			"file": "js/species.js",
 			"settings":
 			{
-				"buffer_size": 11710,
+				"buffer_size": 13965,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -80,7 +80,7 @@
 			"file": "css/styles.css",
 			"settings":
 			{
-				"buffer_size": 5608,
+				"buffer_size": 7732,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -167,6 +167,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"imgSrc",
+			"vm.excerpt",
+			"image",
+			"shadow",
+			"image",
+			"excerpt",
+			"this.getSpiel",
+			"vm.genus",
+			"taxon",
+			"label",
 			"taxonomy",
 			"self.scientific",
 			"countries",
@@ -185,6 +195,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"this.getTaxonEndpoint",
 			"self",
 			"n",
 			"nodes[i]"
@@ -207,25 +218,25 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4519,
+						"buffer_size": 7721,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3354,
-								3354
+								5651,
+								5651
 							]
 						],
 						"settings":
 						{
-							"spell_check": false,
+							"spell_check": true,
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2968.0,
+						"translation.y": 4707.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -237,15 +248,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4408,
+						"buffer_size": 4412,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1939,
+								1939
 							]
 						],
 						"settings":
@@ -257,7 +268,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -266,15 +277,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3109,
+						"buffer_size": 4964,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								600,
-								600
+								93,
+								93
 							]
 						],
 						"settings":
@@ -283,7 +294,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 362.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -315,7 +326,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -345,7 +356,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -361,8 +372,8 @@
 						"selection":
 						[
 							[
-								37523,
-								37525
+								52648,
+								52661
 							]
 						],
 						"settings":
@@ -372,10 +383,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 44221.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -384,15 +395,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11710,
+						"buffer_size": 13965,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								647,
+								647
 							]
 						],
 						"settings":
@@ -404,7 +415,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -413,15 +424,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5608,
+						"buffer_size": 7732,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								305,
-								305
+								2151,
+								2151
 							]
 						],
 						"settings":
@@ -434,7 +445,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]

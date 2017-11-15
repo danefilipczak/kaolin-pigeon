@@ -12,6 +12,13 @@ TO DO:
 bind threat and regions data
 navigation screen
 
+remove all google maps button
+
+re-instate habitats and regions buttons 
+
+real navigation 
+
+clik back to species from another leve of taxonoy
 
 */
 
