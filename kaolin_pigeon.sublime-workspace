@@ -15,7 +15,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 7721,
+				"buffer_size": 7730,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -33,7 +33,7 @@
 			"file": "js/app.js",
 			"settings":
 			{
-				"buffer_size": 4964,
+				"buffer_size": 5105,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -218,15 +218,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7721,
+						"buffer_size": 7730,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5651,
-								5651
+								6109,
+								4955
 							]
 						],
 						"settings":
@@ -236,7 +236,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4707.0,
+						"translation.y": 3542.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -277,15 +277,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4964,
+						"buffer_size": 5105,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								93,
-								93
+								323,
+								323
 							]
 						],
 						"settings":

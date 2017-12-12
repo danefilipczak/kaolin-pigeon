@@ -2,6 +2,7 @@
 			This file contains the object model for the a single species, and the data it contains. 
 			It includes many methods for fetching information about the species from wikipedia or ICUN redlist. 
 */
+var token = '0a12c7a6e9b5ec8e06ced309eabbcba8fdb24b32b16a85e76f820e9c2b6d5b72'
 
 function Species(input) {
 
@@ -85,7 +86,7 @@ function Species(input) {
 
 Species.prototype.getTaxonomy = function(species) {
 	var self = this;
-	var url = "http://apiv3.iucnredlist.org/api/v3/species/" + species + "?token=0a12c7a6e9b5ec8e06ced309eabbcba8fdb24b32b16a85e76f820e9c2b6d5b72"
+	var url = "http://apiv3.iucnredlist.org/api/v3/species/" + species + "?token=" + token;
 	$.ajax({
 		url: url,
 		// dataType: "jsonP",
@@ -129,7 +130,7 @@ Species.prototype.getTaxonomy = function(species) {
 
 Species.prototype.getCountriesBySpecies = function(species) {
 	var self = this;
-	var url = "http://apiv3.iucnredlist.org/api/v3/species/countries/name/" + species + "?token=0a12c7a6e9b5ec8e06ced309eabbcba8fdb24b32b16a85e76f820e9c2b6d5b72"
+	var url = "http://apiv3.iucnredlist.org/api/v3/species/countries/name/" + species + "?token=" + token;
 	$.ajax({
 		url: url,
 		// dataType: "jsonP",
@@ -159,7 +160,7 @@ Species.prototype.getCountriesBySpecies = function(species) {
 Species.prototype.getHabitatsBySpecies = function(species) {
 	var self = this;
 	//returns an array of majorly import habitats.
-	var url = 'http://apiv3.iucnredlist.org/api/v3/habitats/species/name/' + species + '?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee';
+	var url = 'http://apiv3.iucnredlist.org/api/v3/habitats/species/name/' + species + '?token=' + token;
 	$.ajax({
 		url: url,
 		// dataType: "jsonP",
@@ -182,7 +183,7 @@ Species.prototype.getHabitatsBySpecies = function(species) {
 Species.prototype.getThreatsBySpecies = function(species) {
 	//returns an array of majorly import habitats.
 	var self = this;
-	var url = 'http://apiv3.iucnredlist.org/api/v3/threats/species/name/' + species + '?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee';
+	var url = 'http://apiv3.iucnredlist.org/api/v3/threats/species/name/' + species + '?token=' + token;
 	$.ajax({
 		url: url,
 		// dataType: "jsonP",
